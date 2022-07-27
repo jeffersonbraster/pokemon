@@ -1,0 +1,198 @@
+.tag {
+  display: flex;
+  align-items: center;
+
+  background-color: #ffffff;
+  border-radius: 24.4rem;
+  max-width: 12.1rem;
+  padding: 6px 4px;
+
+  &.blue-tag {
+    .icon {
+      background-color: rgba(63, 104, 186, 0.151);
+    }
+
+    span {
+      color: #3f67ba
+    }
+  }
+
+  .icon {
+    width: 2.6rem;
+    height: 2.6rem;
+
+    background-color: rgba(194, 0, 0, 0.2);
+    border-radius: 50%;
+
+    @include centerTotalFlex;
+    margin-right: 0.8rem;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 150%;
+    color: #c20001;
+  }
+}
+
+.search {
+  background-color: #ffffff;
+  border-radius: 12.2rem;
+  height: 5.6rem;
+  width: 100%;
+  max-width: 40.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2.5rem;
+  padding-right: 0.7rem;
+
+  input[type=text] {
+    border: 0;
+    outline: 0;
+    width: 80%;
+
+    font-size: 1.5rem;
+    line-height: 150%;
+    color: #a0afba;
+
+    &::placeholder {
+      color: #a0afba;
+    }
+  }
+
+  button {
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: rgba(158, 185, 225, 0.101);
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+    &:hover {
+      border-color:#3e75c3;
+    }
+    @include centerTotalFlex
+  }
+}
+
+.type-filter {
+  display: flex;
+  align-items: center;
+  filter: grayscale(100%);
+  opacity: 0.6;
+
+  &:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  .icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    @include centerTotalFlex;
+    margin-right: 0.5rem;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 150%;
+  }
+
+  &.all {
+    span {
+      color: var(--blue-primary);
+    }
+  }
+  &.ghost {
+    span {
+      color: var(--type-ghost);
+    }
+  }
+  &.bug {
+    span {
+      color: var(--type-bug);
+    }
+  }
+  &.dark {
+    span {
+      color: var(--type-dark);
+    }
+  }
+  &.dragon {
+    span {
+      color: var(--type-dragon);
+    }
+  }
+  &.electric {
+    span {
+      color: #EED967;
+    }
+  }
+  &.fairy {
+    span {
+      color: var(--type-fairy);
+    }
+  }
+  &.fighting {
+    span {
+      color: var(--type-fighting);
+    }
+  }
+  &.ground {
+    span {
+      color: var(--type-ground);
+    }
+  }
+  &.ice {
+    span {
+      color: var(--type-ice);
+    }
+  }
+  &.normal {
+    span {
+      color: var(--type-normal);
+    }
+  }
+  &.poison {
+    span {
+      color: var(--type-poison);
+    }
+  }
+  &.psychic {
+    span {
+      color: var(--type-psychic);
+    }
+  }
+  &.rock {
+    span {
+      color: var(--type-rock);
+    }
+  }
+  &.grass {
+    span {
+      color: var(--type-grass);
+    }
+  }
+  &.steel {
+    span {
+      color: var(--type-steel);
+    }
+  }
+  &.water {
+    span {
+      color: var(--type-water);
+    }
+  }
+  &.fire {
+    span {
+      color: var(--type-fire);
+    }
+  }
+  &.flying {
+    span {
+      color: var(--type-flying);
+    }
+  }
+}
