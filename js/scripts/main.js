@@ -1,3 +1,12 @@
+//scripts do slider hero
+var slide_hero = new Swiper(".slide-hero", {
+  effect: "fade",
+  pagination: {
+    el: ".slide-hero .main-area .area-explore .swiper-pagination ",
+  }
+})
+
+
 const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
 const btnCloseModal = document.querySelector('.js-close-modal-details-pokemon');
 
