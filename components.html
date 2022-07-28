@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/plugins.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>components</title>
+  </head>
+  <body>
+    <h1>template gulp</h1>
+
+    <div class="tag blue-tag">
+      <div class="icon"><img src="./img/bag-red.svg" alt="" /></div>
+      <span>pokedex</span>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search name or code" />
+      <button type="button">
+        <img src="./img/icon-search.svg" alt="" />
+      </button>
+    </div>
+
+    <button class="type-filter grass">
+      <div class="icon">
+        <img src="./img/icon-types/grass.svg" alt="" />
+      </div>
+      <span>Grass</span>
+    </button>
+
+    <button class="card-pokemon fire js-open-details-pokemon">
+      <div class="image">
+        <img src="./img/bulbasaur.svg" alt="" />
+      </div>
+      <div class="info">
+        <div class="text">
+          <span>#001</span>
+          <h3>Bulbasaur</h3>
+        </div>
+        <div class="icon">
+          <img src="./img/icon-types/grass.svg" alt="" />
+        </div>
+      </div>
+    </button>
+
+    <span class="tag-type fire">Bug</span>
+
+    <button class="btn-load-more">Veja mais pokemons</button>
+
+    <footer>
+      <div class="container">
+        <div class="text">
+          <h3>Projeto pokemon</h3>
+          <p>Utilizando html, sass, javascript, gulp</p>
+        </div>
+
+        <span
+          >Feito com ❤️ por
+          <a
+            href="https://www.linkedin.com/in/jefferson-brandao-dev/"
+            target="_blank"
+            >Jefferson Brandão</a
+          ></span
+        >
+      </div>
+    </footer>
+
+    <div class="modal" type-pokemon-modal="grass">
+      <div class="overlay"></div>
+      <div class="box">
+        <button class="close js-close-modal-details-pokemon">
+          <img src="img/close.svg" alt="" />
+        </button>
+        <div class="left-container">
+          <div class="icon">
+            <img
+              src="img/icon-types/grass.svg"
+              id="js-image-type-modal"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img src="img/bulbasaur.svg" alt="" id="js-image-pokemon-modal" />
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="name">
+            <h2 id="js-name-pokemon-modal">Bulbasaur</h2>
+            <span id="js-code-pokemon-modal">#001</span>
+          </div>
+          <ul class="type" id="js-types-pokemon">
+            <li>
+              <span class="tag-type fire">Fire</span>
+            </li>
+            <li>
+              <span class="tag-type poison">Poison</span>
+            </li>
+          </ul>
+          <ul class="info">
+            <li>
+              <span>Height</span>
+              <strong>0.7m</strong>
+            </li>
+            <li>
+              <span>Weight</span>
+              <strong>6.9kg</strong>
+            </li>
+            <li>
+              <span>Abilities</span>
+              <strong>Overgrow</strong>
+            </li>
+          </ul>
+          <div class="weak">
+            <h4>Weaknesses</h4>
+            <ul>
+              <li>
+                <span class="tag-type water">Water</span>
+              </li>
+              <li>
+                <span class="tag-type electric">Electric</span>
+              </li>
+            </ul>
+          </div>
+          <div class="stats">
+            <h5>Stats</h5>
+            <div class="all">
+              <div class="item">
+                <span>HP</span>
+                <div class="bar-status">
+                  <div class="bar"></div>
+                  <ul class="separator">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <span>Attack</span>
+                <div class="bar-status">
+                  <div class="bar"></div>
+                  <ul class="separator">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <span>Defense</span>
+                <div class="bar-status">
+                  <div class="bar"></div>
+                  <ul class="separator">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <span>Sp. attack</span>
+                <div class="bar-status">
+                  <div class="bar"></div>
+                  <ul class="separator">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <span>Sp. defense</span>
+                <div class="bar-status">
+                  <div class="bar"></div>
+                  <ul class="separator">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <span>Speed</span>
+                <div class="bar-status">
+                  <div class="bar"></div>
+                  <ul class="separator">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
