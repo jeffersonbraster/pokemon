@@ -19,4 +19,12 @@ header {
     line-height: 1.6rem;
     color: #ffffff;
   }
+
+  @media(max-width: 560px) {
+    height: 8.2rem;
+
+    img {
+      max-width: 12.9rem;
+    }
+  }
 }
