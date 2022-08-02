@@ -20,8 +20,8 @@ footer {
       font-size: 1.4rem;
       line-height: 180%;
       color: rgba(255, 255, 255, 0.8);
-      
-    }    
+
+    }
   }
 
   span {
@@ -38,6 +38,26 @@ footer {
       &:hover {
         transform: scale(1.03);
         color: #ffffff;
+      }
+    }
+  }
+
+  @media(max-width: 560px) {
+    padding: 4rem 0;
+
+    .container {
+      flex-direction: column;
+    }
+
+    .text {
+      margin-bottom: 3rem;
+
+      h3 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
       }
     }
   }
