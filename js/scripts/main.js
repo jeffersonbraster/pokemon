@@ -21,4 +21,12 @@ function closeDetailsPokemon() {
   document.documentElement.classList.remove("open-modal");
 }
 
-btnCloseModal.addEventListener("click", closeDetailsPokemon);
+if (btnCloseModal) {
+  btnCloseModal.addEventListener("click", closeDetailsPokemon);
+}
+
+const btnDropDownSelect = document.querySelector(".js-open-select-custom");
+
+btnDropDownSelect.addEventListener("click", () => {
+  btnDropDownSelect.parentElement.classList.toggle("active");
+});
