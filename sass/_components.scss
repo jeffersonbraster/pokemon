@@ -386,6 +386,10 @@
     margin: 0 auto;
     margin-bottom: 1.4rem;
 
+    .thumb-img {
+      max-width: 14.2rem;
+    }
+
     &:after {
       content: "";
       position: absolute;
