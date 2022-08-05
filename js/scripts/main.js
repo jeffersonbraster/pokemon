@@ -131,6 +131,9 @@ function openDetailsPokemon() {
   const iconTypePokemonModal = document.getElementById("js-image-type-modal");
   const namePokemonModal = document.getElementById("js-name-pokemon-modal");
   const codePokemonModal = document.getElementById("js-code-pokemon-modal");
+  const heightPokemonModal = document.getElementById("js-height-pokemon");
+  const weightPokemonModal = document.getElementById("js-weight-pokemon");
+  const abilityPokemonModal = document.getElementById("js-ability-pokemon");
 
   imgPokemonModal.setAttribute("src", imagePokemon.getAttribute("src"));
   modalDetails.setAttribute("type-pokemon-modal", this.classList[2]);
@@ -142,7 +145,84 @@ function openDetailsPokemon() {
   axios({
     method: "GET",
     url: `https://pokeapi.co/api/v2/pokemon/${codePokemon}`,
-  }).then((response) => {});
+  }).then((response) => {
+    let data = response.data;
+
+    let infoPokemon = {
+      mainAbility: primeiraLetraMaiuscula(data.abilities[0].ability.name),
+      weight: data.weight,
+      height: data.height,
+      abilities: data.abilities,
+      stats: data.stats,
+      urlType: data.types[0].type.url,
+    };
+
+    function listingTypesPokemon() {
+      const areaTypesModal = document.getElementById("js-types-pokemon");
+
+      areaTypesModal.innerHTML = "";
+
+      response.data.types.forEach((itemType) => {
+        let itemList = document.createElement("li");
+        areaTypesModal.appendChild(itemList);
+
+        let spanList = document.createElement("span");
+        spanList.classList = `tag-type ${itemType.type.name}`;
+        spanList.textContent = itemType.type.name;
+
+        itemList.appendChild(spanList);
+      });
+    }
+    listingTypesPokemon();
+
+    function listingWeakPokemon() {
+      const areaWeak = document.getElementById("js-area-weak");
+
+      areaWeak.innerHTML = "";
+
+      axios({
+        method: "GET",
+        url: `${infoPokemon.urlType}`,
+      }).then((response) => {
+        let weaks = response.data.damage_relations.double_damage_from;
+
+        weaks.forEach((itemType) => {
+          let itemListWeak = document.createElement("li");
+          areaWeak.appendChild(itemListWeak);
+
+          let spanList = document.createElement("span");
+          spanList.classList = `tag-type ${itemType.name}`;
+          spanList.textContent = itemType.name;
+
+          itemListWeak.appendChild(spanList);
+        });
+      });
+    }
+
+    listingWeakPokemon();
+
+    heightPokemonModal.textContent = `${infoPokemon.height / 10}m`;
+    weightPokemonModal.textContent = `${infoPokemon.weight / 10}kg`;
+    abilityPokemonModal.textContent = infoPokemon.mainAbility;
+
+    const statsHp = document.getElementById("js-stats-hp");
+    statsHp.style.width = `${infoPokemon.stats[0].base_stat}%`;
+
+    const statsAttack = document.getElementById("js-stats-attack");
+    statsAttack.style.width = `${infoPokemon.stats[1].base_stat}%`;
+
+    const statsDefense = document.getElementById("js-stats-defense");
+    statsDefense.style.width = `${infoPokemon.stats[2].base_stat}%`;
+
+    const statsSpAttack = document.getElementById("js-stats-sp");
+    statsSpAttack.style.width = `${infoPokemon.stats[3].base_stat}%`;
+
+    const statsSpDefense = document.getElementById("js-stats-sp-defense");
+    statsSpDefense.style.width = `${infoPokemon.stats[4].base_stat}%`;
+
+    const statsSpeed = document.getElementById("js-stats-speed");
+    statsSpeed.style.width = `${infoPokemon.stats[5].base_stat}%`;
+  });
 }
 
 function closeDetailsPokemon() {
